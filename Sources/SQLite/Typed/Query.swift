@@ -1151,21 +1151,21 @@ public enum OnConflict: String {
 
 public struct QueryClauses {
 
-    var select = (distinct: false, columns: [Expression<Void>(literal: "*") as Expressible])
+    public var select = (distinct: false, columns: [Expression<Void>(literal: "*") as Expressible])
 
-    var from: (name: String, alias: String?, database: String?)
+    public var from: (name: String, alias: String?, database: String?)
 
-    var join = [(type: JoinType, query: QueryType, condition: Expressible)]()
+    public var join = [(type: JoinType, query: QueryType, condition: Expressible)]()
 
-    var filters: Expression<Bool?>?
+    public var filters: Expression<Bool?>?
 
-    var group: (by: [Expressible], having: Expression<Bool?>?)?
+    public var group: (by: [Expressible], having: Expression<Bool?>?)?
 
-    var order = [Expressible]()
+    public var order = [Expressible]()
 
-    var limit: (length: Int, offset: Int?)?
+    public var limit: (length: Int, offset: Int?)?
     
-    var union = [QueryType]()
+    public var union = [QueryType]()
 
     fileprivate init(_ name: String, alias: String?, database: String?) {
         self.from = (name, alias, database)
